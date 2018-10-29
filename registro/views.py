@@ -17,7 +17,10 @@ def index(request):
     usuario = request.session.get('usuario',None)
     return render(request,'index.html',{'name':'Registro de personas','personas':Persona.objects.all(),'usuario':usuario})
 
-@login_required(login_url='login')
+def inicio(request):
+    return render(request,'inicio.html',{})
+
+
 def crear(request):
     nombre = request.POST.get('nombre','')
     correo = request.POST.get('correo','')

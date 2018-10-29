@@ -1,0 +1,55 @@
+.redes{
+    display: flex;
+    display: inline; 
+    list-style: none;
+}
+.aling{
+    display: flex;
+    display: inline; 
+}
+
+h2{
+    color: black;
+}
+p{
+    color: black;
+}
+
+.altura-maxima{
+    max-height: 500px;
+    min-height: 500px;
+    
+}
+
+#main{
+    height: 180px;
+}
+
+.img{
+    width: 100%;
+    height: 70px;
+    background-color: #0083CA;
+    margin: 0 auto;
+}
+
+.col{
+    width: 30%;
+    float:left;
+    margin-left: 10px;
+    padding-left: 20px;
+}
+
+.title-body{
+    width: 80px;
+    border: 2px solid gray;
+    float: right;
+}
+.title-body2{
+    width: 90px;
+    border: 2px solid gray;
+    margin-top: 45px;
+}
+
+.btn-c{
+    text-align: center;
+}
