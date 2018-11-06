@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     {% load static %}
+    <link rel="stylesheet" href="{% static "sweet/sweetalert2.min.css"%}">
     <link rel="stylesheet" href="{% static "css/estilo.css" %}" type="text/css">
-    <title >MIS PERRIS - WEB</title>
+    <title >Inmigración- Chile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"  >
     
 
@@ -15,228 +16,263 @@
 </head>
 <body >
         <!--NAVBAR -->
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #6DCCAA">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-                <!--IMAGEN LOGO MIS PERRIS -->
-                <a class="navbar-brand icon-background"  href="#"> <img src="{% static "img/logo.png" %}" alt=""></a>
+          <a class="navbar-brand icon-background"  href="#"> <img src="{% static "img/Icon-Transp.png" %}" alt=""></a>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
 
-                <!--COLLAPSE NAVBAR -->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
+              <!--Boton de inicio *Navbar*-->
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Inicio</a>
+              </li>
 
-                    <!--BOTON INICIO *Navbar*-->
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url "inicio"%}">Inicio</a>
-                    </li>
+              <!--Boton de ¿Quienes somos? *Navbar*-->
 
-                    <!--BOTON QUIENES SOMOS *Navbar*-->
+              <li class="nav-item">
+                <a class="nav-link" href="#">¿Quienes somos?</a>
+              </li>
 
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">¿Quienes somos?</a>
-                    </li>
+              <!--Boton de Contacto *Navbar*-->
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Contacto</a>
+              </li>
 
-                    <!--BOTON CONTACTO *Navbar*-->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
-                    </li>
+            </ul>
 
-                    
+            
 
-                  </ul>
-
-                  <!-- REDES SOCIALES   #1190cb-->
-                        <div class="redes">
-                                <li class=" aling"><a class="nav-item btn btn-outline-light" href="{% url "login"%}">Login</a></li>
-                                <li class=" aling"><a class="nav-item btn btn-outline-light" href="{% url "index"%}">Adopcion</a></li>
-                                <li class=" aling" > <img src="{% static "img/redes/email.png" %}" height="40" width="40" alt=""></li> 
-                                <li class=" aling" > <img src="{% static "img/redes/facebook.png" %}" height="40" width="40" alt=""></li> 
-                                <li class=" aling" > <img src="{% static "img/redes/twitter.png" %}" height="56" width="54" alt=""></li> 
-                                <li class=" aling" > <img src="{% static "img/redes/instagram.png" %}" height="40" width="40" alt=""></li> 
-                        </div>
+            <!-- *Color* redes sociales   #1190cb-->
+            <li class=" aling" ><a href="{% url "index"%}" class="btn btn-outline-info" style="float: left; margin-right: 20px;" >Postular</a></li>
+                  <div class="redes">
+                          
+                          <li class=" aling" > <img src="{% static "img/redes/email.png"%}" height="40" width="40" alt=""></li> 
+                          <li class=" aling" > <img src="{% static "img/redes/facebook.png"%}" height="40" width="40" alt=""></li> 
+                          <li class=" aling" > <img src="{% static "img/redes/twitter.png"%}" height="56" width="54" alt=""></li> 
+                          <li class=" aling" > <img src="{% static "img/redes/instagram.png"%}" height="40" width="40" alt=""></li> 
                 </div>
-              </nav>
+          </div>
+        </nav>
 
-              <!--CAROUSEL INICIO -->
-              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                  <!--SLIDE 1 -->
-                  <div class="carousel-item active">
-                    <img class="d-block w-100 altura-maxima " src="{% static "img/adoptados/Apolo.jpg" %}" alt="First slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Estamos muy satisfechos con el rescate de nuestro nuevo integrante,
-                            el ahora esta saludable y muy contento en nuestra pequeña familia.
-                        </h5>
-                    </div>
-                  </div>
-
-                  <!--SLIDE 2 -->
-                  <div class="carousel-item ">
-                    <img class="d-block w-100 altura-maxima " src="{% static "img/adoptados/Duque.jpg" %}" alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Nos llamo la atencion la forma de ser de este cachorro,
-                            el es muy jugueton y muy fuerte. Se llama Tom!
-                        </h5>
-                      </div>
-                  </div>
-
-                  <!--SLIDE 3 -->
-                  <div class="carousel-item ">
-                    <img class="d-block w-100  altura-maxima" src="{% static "img/adoptados/Tom.jpg" %}" alt="Third slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Este cachorro esta muy feliz y saludable, mis 2 hijos
-                        ya lo aman, estamos muy contentos. </h5>
-                      </div>
-                  </div>
-                  <!--BOTON ATRAS *CAROUSEL* -->
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <!--BOTON SIGUIENTE *CAROUSEL* -->
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </div>
-
-              <!--CAROUSEL FIN -->
-
-            <!--BODY INICIO -->
-
-            <div class="container">
-              <section class="main row" style="margin-top: 100px; margin-bottom: 200px;">
-                <div class="col-md-6" style="background-color: white; height: 500px; width: 500px ">
-
-                  <div style="width: 150px; height: 50px; float: right;">
-                      <h3 style="float: right;">RESCATE</h3>
-                        <p style="float: right;">ETAPA UNO</p>
-                      <div class="title-body"> </div>
-                  </div>
-
-                <div style="float: left;">
-                      <p style="margin-top: 50px;">Rescatamos perros en situación de peligro y/o abandono. Los rehabilitamos y los
-                          preparamos para buscarles un hogar.
-                      </p>
-                </div>
-
-                  <div style="float: right; margin-top: 20px;">  
-                    <img src="{% static "img/rescatado.jpg" %}" alt="">
-                 </div>
-
-                </div>
-
-
-                <div class="col-md-6" style="background-color: white; height: 500px; width: 500px">
-
-                    <div style="float: left; width: 90px; height: 90px;">  
-                        <img style="width: 350px; height: 280px;" src="{% static "img/comida.jpg" %}" alt="">
-                        <div style="float: left;">
-                            <h3 style="margin-top: 50px;">CROWDFUNDING</h3>
-                            <p style="float: left;">FINANCIAMIENTO</p>
-                            <div class="title-body2"> </div>
-                      </div>
-                    </div>
-                      <div style="float: right;">
-                          <p style="margin-top: 350px;">Sigue nuestras redes sociales para informarte acerca de las diversas campañas y
-                            actividades que realizamos para obtener financiamiento para seguir ayudando..</p>
-                            <button style="margin-top: 20px;" type="button" class="btn btn-outline-dark">CAMPAÑAS</button>
-                    </div>
-                </div>
-              </section>
+        <!--CAROUSEL INICIO -->
+        <div id="carouselExampleIndicators" class="carousel slide data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100 img-responsive" src="{% static "img/background.jpg"%}" alt="First slide">
             </div>
-            <div class="container" style="text-align: center;margin-bottom: 50px;">
-              <h3>Galeria de Rescatados</h3>
-            </div>
-<!-- CARD DECK 1-->
-          <div class="container"> 
-            <div class="card-deck">
-
-              <div class="card">
-                <img class="card-img-top" src="{% static "img/rescatados/Bigotes.jpg" %}" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">BIGOTES</h5>
-                  <p class="card-text">Nadie le quita el jueguete a bigotes una vez lo tiene, nadie se lo quita!! Es una mascota ideal para los amantes de las mascotas juguetonas. </p>
-                  <div class="card-body btn-c">
-                    <a href="#" class="btn btn-outline-success">ADOPTAR!</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <img class="card-img-top" src="{% static "img/rescatados/Chocolate.jpg" %}" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">CHOCOLATE</h5>
-                  <p class="card-text">Tal cual su nombre lo dice, el es un perro muy dulce y muy pacifico ideal para familias mas tranquilas. </p>
-                </div>
-                <div class="card-body btn-c">
-                    <a href="#" class="btn btn-outline-success">ADOPTAR!</a>
-                  </div>
-
-              </div>
-              <div class="card">
-                <img class="card-img-top" src="{% static "img/rescatados/Luna.jpg" %}" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">LUNA</h5>
-                  <p class="card-text">Luna con tan solo 3 meses de edad es posible de encantar a todo el que se le quede mirando.</p>
-                  <div class="card-body btn-c">
-                      <a href="#" class="btn btn-outline-success">ADOPTAR!</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-<!-- CARD DECK 1 FIN-->
-
-
-<!-- CARD DECK 2-->
-          
-            <div class="card-deck" style="margin-top: 50px; margin-bottom: 100px;">
-              <div class="card">
-                <img class="card-img-top" src="{% static "img/rescatados/Maya.jpg" %}" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">MAYA</h5>
-                  <p class="card-text">Maya al igual que su compañera luna es una perrita muy pequeña de edad, pero aun asi nadie le quita las ganas por jugar contigo!  </p>
-                  <div class="card-body btn-c">
-                      <a href="#" class="btn btn-outline-success">ADOPTAR!</a>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <img class="card-img-top" src="{% static "img/rescatados/Pexel.jpg" %}" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">PEXEL</h5>
-                  <p class="card-text">Pexel es una mascota muy consentida, le gusta mucho jugar en parques y posar para las fotos, Un fiel aliado para los que pasan en redes sociales</p>
-                  <div class="card-body btn-c">
-                      <a href="#" class="btn btn-outline-success">ADOPTAR!</a>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <img class="card-img-top" src="{% static "img/rescatados/Oso.jpg" %}" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">OSO</h5>
-                  <p class="card-text">Oso es la mascota que vas a querer abrazar a penas la veas es muy tierno y le gusta pasar mucho tiempo jugando y compartiendo con los demas. .</p>
-                  <div class="card-body btn-c">
-                      <a href="#" class="btn btn-outline-success">ADOPTAR!</a>
-                  </div>
-                </div>
-              </div>
+            <div class="carousel-item">
+              <img class="d-block w-100 img-responsive" src="{% static "img/background2.jpg"%}" alt="Second slide">
             </div>
           </div>
+
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
-<!-- CARD DECK 2 FIN -->
-          <!--BODY FIN -->
+
+        <!--CAROUSEL FIN -->
+
+        <!--BODY INICIO TRABAJADORES -->
+            <div class="container">
+              <div class="row">
+                <div class=" col-xs-12 col-sm-6 col-md-3" >
+                  <div class="card" style="">
+                    <img class="card-img-top" src="{% static "img/Trabajadores/hombre1.jpg"%}" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-text"> Nombre:  Juan Carlos </h5>
+                        <h5 class="card-text"> Edad:  49 Años </h5>
+                        <h5 class="card-text"> Nacionalidad:  Español </h5>
+                        <h5 class="card-text " > Especialidad:  Medico-Cirujano </h5>
+  
+                      </div>
+                        <div class="card-body">
+                          <a href="#" class="btn btn-outline-info">Contactar</a>
+                        </div>
+                    </div>
+                </div>
+  
+                <div class=" col-xs-12 col-sm-6 col-md-3">
+                    <div class="card" style="">
+                      <img class="card-img-top" src="{% static "img/Trabajadores/hombre3.jpg"%}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-text"> Nombre:  Xing Wing </h5>
+                            <h5 class="card-text"> Edad:  21 Años </h5>
+                            <h5 class="card-text"> Nacionalidad:  Koreano </h5>
+                            <h5 class="card-text " > Especialidad:  Periodista </h5>
+                          </div>
+                            <div class="card-body">
+                              <a href="#" class="btn btn-outline-info">Contactar</a>
+                          </div>
+                      </div>
+                </div>
+  
+                <div class=" col-xs-12 col-sm-6 col-md-3">
+                    <div class="card" style="">
+                      <img class="card-img-top" src="{% static "img/Trabajadores/hombre2.jpg"%}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-text"> Nombre:  Pedro Alcantara </h5>
+                            <h5 class="card-text"> Edad:  29 Años </h5>
+                            <h5 class="card-text"> Nacionalidad:  Peruano </h5>
+                            <h5 class="card-text " > Especialidad:  Mecanico </h5>
+                          </div>
+                            <div class="card-body">
+                              <a href="#" class="btn btn-outline-info">Contactar</a>
+                          </div>
+                      </div>
+                </div>
+  
+                <div class=" col-xs-12 col-sm-6 col-md-3">
+                    <div class="card" style="">
+                      <img class="card-img-top" src="{% static "img/Trabajadores/mujer1.jpg"%}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-text"> Nombre:  Luz Benites</h5>
+                            <h5 class="card-text"> Edad:  42 Años </h5>
+                            <h5 class="card-text"> Nacionalidad:  Mexicana </h5>
+                            <h5 class="card-text " > Especialidad:  Psicologia </h5>
+                          </div>
+                            <div class="card-body">
+                              <a href="#" class="btn btn-outline-info">Contactar</a>
+                          </div>
+                      </div>
+                </div>
+    
+              </div>
+            </div>
+          <!--BODY FIN TRABAJADORES -->
+
+          <!--BODY NOTICIAS INICIO -->
+          <div class="container" style="margin-top: 100px"> 
+            <div class="card-deck">
+                <div class="card">
+                  <img class="card-img-top" src="{% static "img/Cards/card1.jpg"%}" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">Estados Unidos no da tregua</h5>
+                    <p class="card-text">El presidente estadounidense impulsa la construcción del muro para frenar la entrada irregular de inmigrantes.</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">Última actualización hace 3 minutos</small>
+                  </div>
+                </div>
+                <div class="card">
+                  <img class="card-img-top" src="{% static "img/Cards/card2.jpeg"%}" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">Nueva Alianza</h5>
+                    <p class="card-text">Encuentro Social interpuso el recurso de inconformidad el pasado 18 de septiembre; Nueva Alianza, presentó su escrito ayer lunes por la noche.</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">Última actualización hace 20 minutos</small>
+                  </div>
+                </div>
+                <div class="card">
+                  <img class="card-img-top" src="{% static "img/Cards/card3.jpg"%}" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">Welcome Refugees</h5>
+                    <p class="card-text">Países como España reciben aún relativamente pocos refugiados nicaragüenses, pero la sangrienta crisis ha disparado las solicitudes de asilo.</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">Última actualización hace 4 horas</small>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <!--BODY FIN NOTICIAS -->
+
+        <!--BODY DONACIONES INICIO-->
+        <div class="container" >
+          <div class="galeria">
+      
+              <div class="title-img">
+                  <h3>Donación de Artículos</h3>
+              </div>
+
+              <div class=" col-xs-12 col-sm-6 col-md-3">
+                <div class="box-img">
+                  <img src="{% static "img/Donaciones/art1.jpg"%}" alt="">
+                  <a href="#" class="btn btn-block btn-outline-info">Reclamar</a>
+                </div>
+              </div>
+
+              <div class=" col-xs-12 col-sm-6 col-md-3">
+                <div class="box-img">
+                  <img src="{% static "img/Donaciones/art2.jpg"%}" alt="">
+                  <a href="#" class="btn btn-block btn-outline-info">Reclamar</a>
+                </div>
+              </div>
+      
+              <div class=" col-xs-12 col-sm-6 col-md-3">
+                <div class="box-img">
+                  <img src="{% static "img/Donaciones/art3.jpg"%}" alt="">
+                  <a href="#" class="btn btn-block btn-outline-info">Reclamar</a>
+                </div>
+              </div>
+      
+              <div class=" col-xs-12 col-sm-6 col-md-3">
+                <div class="box-img">
+                  <img src="{% static "img/Donaciones/art1.jpg"%}" alt="">
+                  <a href="#" class="btn btn-block btn-outline-info">Reclamar</a>
+                 </div>
+              </div>
+
+              <button class="input-type-email" aria-label="Try me! Example: input type email">Try me!</button>
+
+          </div>
+      </div>
+
+      <!--BODY FIN DONACIONES-->
+
+      <!--BODY FIN  "-->
+
+
+      <footer>"
+          <div class="container-fluid">
+              <img style="max-width: 300px; max-height: 300px" src="img/footer-icon.png" alt="">
+
+              <ul style="float: right;">
+                  <!--Boton de inicio *Navbar*-->
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Inicio</a>
+                  </li>
+
+                  <!--Boton de ¿Quienes somos? *Navbar*-->
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">¿Quienes somos?</a>
+                  </li>
+
+                  <!--Boton de Contacto *Navbar*-->
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Contacto</a>
+                  </li>
+              </ul>
+              
+          </div>
+          
+      </footer>
+
           
 <!--SCRIPTS-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="{% static "js/app.js" %}"></script>
+<script src="{% static "sweet/sweetalert2.min.js" %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 <!--SCRIPTS-->    
 </body>
 </html>

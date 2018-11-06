@@ -1,9 +1,9 @@
-console.log("Saludo")
-
-function editar(nombre,correo,id,contrasenia){
-    $("#correo").val(correo)
-    $("#nombre").val(nombre)
-    $("#id").val(id)
-    $("#contrasenia").val(contrasenia)
-    $('#formulario').attr('action', 'registro/editar');
-}
+const {value: email} = await swal({
+    title: 'Input email address',
+    input: 'email',
+    inputPlaceholder: 'Enter your email address'
+  })
+  
+  if (email) {
+    swal('Entered email: ' + email)
+  }
