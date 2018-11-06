@@ -1,9 +1,8 @@
-const {value: email} = await swal({
-    title: 'Input email address',
-    input: 'email',
-    inputPlaceholder: 'Enter your email address'
-  })
-  
-  if (email) {
-    swal('Entered email: ' + email)
-  }
+  $("#button1").click(function(){
+    swal({
+    title:'Hola mundo!',
+    text:"Hola, estamos probando Sweet Alert 2",
+    type:'success'
+    })
+    
+   });
