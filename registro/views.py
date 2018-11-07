@@ -13,9 +13,9 @@ from django.contrib.auth.decorators import login_required
 
 
 
-def index(request):
+def formulario(request):
     usuario = request.session.get('usuario',None)
-    return render(request,'index.html',{'name':'Registro de personas','personas':Persona.objects.all(),'usuario':usuario})
+    return render(request,'formulario.html',{'name':'Registro de personas','personas':Persona.objects.all(),'usuario':usuario})
 
 def inicio(request):
     return render(request,'inicio.html',{})
@@ -28,13 +28,13 @@ def crear(request):
     foto = request.FILES.get('foto',False)
     persona = Persona(nombre=nombre,correo=correo,contrasenia=contrasenia,foto = foto)
     persona.save()
-    return redirect('index')
+    return redirect('formulario')
 
 @login_required(login_url='login')
 def eliminar(request,id):
     persona = Persona.objects.get(pk = id)
     persona.delete()
-    return redirect('index')
+    return redirect('formulario')
 
 @login_required(login_url='login')
 def editar(request):
@@ -45,13 +45,13 @@ def editar(request):
     persona.nombre = nombre
     persona.correo = correo
     persona.save()
-    return redirect('index')
+    return redirect('formulario')
 
 @login_required(login_url='login')
 def cerrar_session(request):
     del request.session['usuario']
     logout(request)
-    return redirect('index')
+    return redirect('formulario')
 
 def login(request):
     return render(request,'login.html',{})
@@ -64,7 +64,7 @@ def login_iniciar(request):
     if user is not None:
         auth_login(request, user)
         request.session['usuario'] = user.first_name+" "+user.last_name
-        return redirect("index")
+        return redirect("formulario")
     else:
         return redirect("login")
     

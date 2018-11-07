@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{% static "sweet/sweetalert2.min.css"%}">
     <link rel="stylesheet" href="{% static "css/estilo.css" %}" type="text/css">
     <title >Inmigración- Chile</title>
+    {% load static %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0"  >
     
 
@@ -48,7 +49,7 @@
             
 
             <!-- *Color* redes sociales   #1190cb-->
-            <li class=" aling" ><a href="{% url "index"%}" class="btn btn-outline-info" style="float: left; margin-right: 20px;" >Postular</a></li>
+            <li class=" aling" ><a href= "{% url "formulario"%}" class="btn btn-outline-info" style="float: left; margin-right: 20px;" >Postular</a></li>
                   <div class="redes">
                           
                           <li class=" aling" > <img src="{% static "img/redes/email.png"%}" height="40" width="40" alt=""></li> 
