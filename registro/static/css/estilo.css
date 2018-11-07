@@ -18,11 +18,11 @@
     width: 100%;
 }
 
-.main{
+.ca{
     display: flex;
     width: auto;
     height: 600px;
-    background-color: #1c5d9e;
+    
     margin-left: 20px;
     margin-right: 20px;
 }

@@ -55,9 +55,9 @@
     </div>
   </nav>
     
-              {% if usuario is not None %}
+              {% if usuario is  None %}
               <div class="container" style=" margin-top: 50px;">
-                <h1>Registrar Persona</h1>
+                <h1>Registro de Personas</h1>
         
                 <h6>{{ ultimo_creado }}</h6>
                 <div class="container-fluid">
@@ -65,44 +65,36 @@
                     <form action="" method="POST" enctype="multipart/form-data">
                       <div class="main row">
                         <div class="col-xs-3 col-sm-6 col-md-3 col-lg-3">
-                            <label for="exampleInputEmail1">Persona</label>
-                        <input  type="text" class="form-control"  name="nombre" id="nombre" placeholder="Nombre persona " required>
+                            <label for="exampleInputEmail1">Nombre</label>
+                        <input  type="text" class="form-control"  name="nombre" id="nombree" placeholder="Ingrese Nombre" required>
                         </div>
                         <div class="col-xs-3 col-sm-6 col-md-3 col-lg-3">
                             <label for="exampleInputPassword1">Edad</label>
-                        <input type="number" class="form-control" name="edad" id="edad" placeholder="Ingrese edad" required>
+                        <input type="number" class="form-control" name="edad" id="edad" placeholder="Ingrese Edad" required>
                         </div>
                         <div class="col-xs-3 col-sm-6 col-md-3 col-lg-3">
-                            <label for="exampleInputPassword1">Profesión</label>
-                              <input type="text" class="form-control" name="profesion" id="profesion" placeholder="Indique su profesión" required>
+                            <label for="exampleInputPassword1">Profesion</label>
+                              <input type="text" class="form-control" name="profesion" id="profesion" placeholder="Ingrese Profesion" required>
                         </div>
                         <div class="col-xs-3 col-sm-6 col-md-3 col-lg-3">
-                            <label for="exampleInputPassword1">Foto</label>
-                            <input type="file" class="form-control" name="foto" id="foto" placeholder="Adicional" required>
-                        <p></p>
-                        <p></p>
+                          <label for="Pais">Pais</label>
+                          <input type="text" class="form-control" name="Pais" id="pais" placeholder="Ingrese Pais" >
                         </div>
                         <div class="container-fluid">
+                          <div class="group-form">
                             <div class="main row">
-                                <div class="col-xs-3 col-sm-6 col-md-3 col-lg-3">
-                                  <label for="exampleInputPassword1">Nacionalidad</label>
-                                  <input type="text" class="form-control" name="pais" id="pais" placeholder="Ingrese Pais" required>
-                                </div>
+                              <div class="col-xs-3 col-sm-6 col-md-3 col-lg-3">
+                                  <label for="exampleInputPassword1">Foto</label>
+                                  <input type="file" class="form-control" name="foto" id="foto" placeholder="Adicional" required>
+                                <p></p>
+                                <p></p>
                               </div>
-                              <p></p>
-                              <p></p>
-
-                        </div>
-                        <div class="container-fluid">
-                          <div class="main row">
-                            <div class="col-xs-3 col-sm-6 col-md-3 col-lg-3">
-                                <button type="submit" class="btn btn-outline-success">Agregar Persona</button>
-
+                             
                             </div>
+                            <button type="submit" class="btn btn-outline-success">Agregar Mascota</button>
                           </div>
                         </div>
-                    
-                        
+
                       </div>
                     </form>
                   </div>
@@ -113,43 +105,45 @@
               <div class="container" style=" margin-top: 100px; background-color: rgba(235, 235, 235, 0.473);">
                   <h2>Listado de Personas</h2>
                   <table class="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Edad</th>
-                            <th scope="col">profesion</th>
-                            <th scope="col">pais</th>
-                            {% if user.is_authenticated %}
-                            <th>Fotos</th>
-                            <th>Modificaciones</th>
-                            {% endif %}
-                          </tr>
-                        </thead>
-                        <tbody>
-                            {% for p in personas %}
-                                <tr>
-                                    <th scope="row">{{p.id}}</th>
-                                    <td>{{p.nombre}}</td>
-                                    <td>{{p.edad}}</td>
-                                    <td>{{p.profesion}}</td>
-                                    <td>{{p.pais}}</td>
-                                    <td><img src=  "" alt="" height="100" srcset=""></td>
-                                    {% if user.is_authenticated %}
-                                    <td> <a href="registro/eliminar/{{p.id}}" class="btn btn-outline-success">Borrar</a>
-                                        <a href="#" onclick="editar('{{p.nombre}}','{{p.correo}}',{{p.id}},'{{p.contrasenia}}')" class="btn btn-outline-success"> Editar</a> </td>
-                                    {% endif %}
-                                </tr>
-                            {% endfor %}                  
-                        </tbody>
-                      </table>
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Edad</th>
+                          <th scope="col">Pais</th>
+                          <th scope="col">Profesion</th>
+                          {% if user.is_authenticated %}
+                          <th>Fotos</th>
+                          <th>Modificaciones</th>
+                          <th scope="col">Estado</th>
+                          {% endif %}
+                        </tr>
+                      </thead>
+                      <tbody>
+                          {% for p in personas %}
+                              <tr>
+                                  <th scope="row">{{p.id}}</th>
+                                  <td>{{p.nombree}}</td>
+                                  <td>{{p.edad}}</td>
+                                  <td>{{p.pais}}</td>
+                                  <td>{{p.profesion}}</td>
+                                  <td><img src="" alt="Foto no cargada" height="100" srcset=""></td>
+                                  {% if user.is_authenticated %}
+                                  <td> <a href="registro/eliminar/{{p.id}}" class="btn btn-outline-success">Borrar</a>
+                                  <a href="#" onclick="editar('{{p.nombree}}','{{p.edad}}','{{p.pais}}','{{p.profesion}}',' class="btn btn-outline-success"> Editar</a> </td>
+                                  {% endif %}
+                                  
+                              </tr>
+                          {% endfor %}                  
+                      </tbody>
+                    </table>
               </div>
               
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery.validate.js"></script>
-    <script src="js/app.js"></script>
+    <script src="{% static "js/app.js" %}"></script>
             
 </body>
 </html>
